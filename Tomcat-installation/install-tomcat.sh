@@ -22,6 +22,7 @@ sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 sudo starttomcat
 echo "end on tomcat installation"
+sudo su - ec2-user
 #========
 
 #2. Start of tomcat configuration 
