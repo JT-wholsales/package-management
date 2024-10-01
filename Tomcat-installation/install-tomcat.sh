@@ -29,7 +29,7 @@ sudo su - ec2-user
 
 
 #Tomcat server configuration:
-find / -name server.xml context.xml
+find / -name context.xml
 vim /opt/tomcat9/conf/server.xml
 vi /opt/tomcat9/webapps/manager/META-INF/context.xml
 vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
