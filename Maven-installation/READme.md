@@ -30,7 +30,7 @@ git --version
 ## 2. Download, extract and Install Maven
 ``` sh
 #Step1) Download the Maven Software
-sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.9-bin.zip
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip
 sudo unzip apache-maven-3.9.9-bin.zip
 sudo rm -rf apache-maven-3.9.9-bin.zip
 sudo mv apache-maven-3.9.9/ maven
