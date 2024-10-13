@@ -4,6 +4,7 @@
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
 # https://github.com/LandmakTechnology/package-management/tree/main/Tomcat-installation
 sudo hostnamecte set-hostname tomcat
+sudo su - ec2-user
 cd /opt 
 sudo yum install git wget vim -y
 sudo yum install java-1.8.0-openjdk-devel -y
