@@ -17,10 +17,15 @@
 ### Install other softwares - git, unzip and wget
 
 sudo timedatectl set-timezone America/New_York
+
 sudo hostnamectl set-hostname jenkins
+
 sudo su - ec2-user
+
 sudo yum install wget git nano tree unzip -y
+
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
+
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum upgrade -y  
