@@ -16,30 +16,22 @@
 ### Install Java JDK 1.8+ as Jenkins pre-requisit
 ### Install other softwares - git, unzip and wget
 
-``` sh
-sudo hostnamectl set-hostname ci
+sudo timedatectl set-timezone America/New_York
+sudo hostnamectl set-hostname jenkins
 sudo su - ec2-user
-sudo yum -y install unzip wget tree git
-sudo wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-11_linux-x64.rpm
-sudo yum install jdk-11_linux-x64.rpm -y
-```
-###  Add Jenkins Repository and key
-```sh
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-cd /etc/yum.repos.d/
-sudo curl -O https://pkg.jenkins.io/redhat-stable/jenkins.repo
-```
+sudo yum install wget git nano tree unzip -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade -y  
 
-## Install Jenkins
-```sh
-sudo yum -y install jenkins  --nobest
-```
-# start Jenkins  service and verify Jenkins is running
-```sh
-sudo systemctl start jenkins
+# Add required dependencies for the jenkins package
+sudo yum install java-11-openjdk -y  
+sudo yum install jenkins -y  
+sudo systemctl daemon-reload
 sudo systemctl enable jenkins
+sudo systemctl start jenkins
 sudo systemctl status jenkins
-```
 # Access Jenkins from the browser
 ```sh
 public-ip:8080
