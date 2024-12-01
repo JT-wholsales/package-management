@@ -1,3 +1,4 @@
+
 #  **<span style="color:green">Landmark Technologies.</span>**
 ### **<span style="color:green">Contacts: +1437 215 2483<br> WebSite : <http://mylandmarktech.com/></span>**
 ### **Email: mylandmarktech@gmail.com**
@@ -33,9 +34,10 @@ sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 ```
 ### Download nexus software and extract it (unzip).
 ```sh
-sudo wget http://download.sonatype.com/nexus/3/nexus-3.73.0-12-unix.tar.gz 
-sudo tar -zxvf nexus-3.73.0-12-unix.tar.gz
-sudo mv /opt/nexus-3.73.0-12 /opt/nexus
+sudo wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz 
+sudo tar -zxvf nexus-3.15.2-01-unix.tar.gz
+sudo mv /opt/nexus-3.15.2-01 /opt/nexus
+sudo rm -rf nexus-3.15.2-01-unix.tar.gz
 ```
 
 ## Grant permissions for nexus user to start and manage nexus service
@@ -50,7 +52,7 @@ sudo chmod -R 775 /opt/sonatype-work
 ## # change from #run_as_user="" to [ run_as_user="nexus" ]
 
 ```sh
-vi /opt/nexus/bin/nexus.rc
+echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc
 ```
 
 ##  CONFIGURE NEXUS TO RUN AS A SERVICE 
@@ -63,3 +65,4 @@ sudo systemctl start nexus
 sudo systemctl status nexus
 echo "end of nexus installation"
 ```
+
